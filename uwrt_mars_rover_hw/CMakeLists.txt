@@ -6,7 +6,10 @@ find_package(catkin REQUIRED COMPONENTS
         controller_manager
         hardware_interface
         joint_limits_interface
+        realtime_tools
         roscpp
+
+        uwrt_mars_rover_msgs
         )
 
 ###################################
@@ -27,7 +30,10 @@ catkin_package(
         controller_manager
         hardware_interface
         joint_limits_interface
+        realtime_tools
         roscpp
+
+        uwrt_mars_rover_msgs
 )
 
 ###########
@@ -73,9 +79,9 @@ target_link_libraries(${PROJECT_NAME}_node
 
 ## Mark executable scripts (Python etc.) for installation
 #install(PROGRAMS
-#        scripts/my_python_script
-#        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-#        )
+#scripts / my_python_script
+#DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION }
+#)
 
 ## Mark executables for installation
 install(TARGETS ${PROJECT_NAME}_node

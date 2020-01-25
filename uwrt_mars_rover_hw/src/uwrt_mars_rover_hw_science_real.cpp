@@ -6,6 +6,13 @@ bool UWRTRoverHWScienceReal::init(ros::NodeHandle& root_nh, ros::NodeHandle& rob
     return false;
   }
 
+  // init state publisher
+  double pub_freq;
+  robot_hw_nh.param("uwrt_mars_rover_hw_science_pub_freq", pub_freq, 10.0);
+  setPublishRate(pub_freq);
+
+  science_state_pub_.init(root_nh, "uwrt_mars_rover_hw/science_state", 10);
+
   // TODO (wraftus) init socketcan
 
   return true;
@@ -16,7 +23,7 @@ void UWRTRoverHWScienceReal::read(const ros::Time& time, const ros::Duration& pe
 }
 // TODO: Implement
 void UWRTRoverHWScienceReal::write(const ros::Time& time, const ros::Duration& period) {
-  // TODO (wraftus) send new commands from joint_cmds_ to the science board
+  // TODO (wraftus) send new commands from joint_cmds_ to the science board, and publish new science state
 }
 
 }  // namespace uwrt_mars_rover_hw
