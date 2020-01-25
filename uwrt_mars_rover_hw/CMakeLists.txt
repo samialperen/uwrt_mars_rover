@@ -47,6 +47,8 @@ add_library(${PROJECT_NAME}
         src/${PROJECT_NAME}_control_loop_real.cpp
         src/${PROJECT_NAME}_drivetrain.cpp
         src/${PROJECT_NAME}_drivetrain_real.cpp
+        src/${PROJECT_NAME}_science.cpp
+        src/${PROJECT_NAME}_science_real.cpp
 
         )
 
